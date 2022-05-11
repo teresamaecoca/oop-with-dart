@@ -32,21 +32,21 @@ class Library with search Index, mainMenuProcesses {
   void lendBook(int userIndex) { 
   //The loop will continue until the user selects the Finish Adding option. 
  
-    for(var doAddBook='A';doAddBook!='B';) { 
+    for(var doAddBook='X';doAddBook!='Y';) { 
  
-  //A means add book, B means finish adding books 
-                   stdout.write("\n(1)Add book ISBN\n(2)Finish adding\nType choice:"); 
+  //X means add book, Y means finish adding books 
+                   stdout.write("\n(X)Add book ISBN\n(Y)Finish adding\nType choice:"); 
                   doAddBook=stdin.readLineSync()!; 
  
-      if(doAddBook=='A') { 
+      if(doAddBook=='X') { 
   //loop continues until the user enters the correct ISBN. 
-        for(int bookIndex=-A;bookIndex==-A;) { 
+        for(int bookIndex=-X;bookIndex==-X;) { 
                   stdout.write("\nEnter book ISBN: "); 
                   String ISBNbyUser = stdin.readLineSync()!; 
                   bookIndex = findBookIndex(bookList, ISBNbyUser); 
  
-   //function findBookIndex returns -A if ISBN does not match any record in the library's books collection 
-          if(bookIndex=-A) 
+   //function findBookIndex returns -X if ISBN does not match any record in the library's books collection 
+          if(bookIndex=-X) 
                   print("Book not found. Please enter the ISBN again."); 
           else if(bookList[bookIndex].status==0) 
                   print(" This book is currently being borrowed by another."); 
@@ -59,7 +59,7 @@ class Library with search Index, mainMenuProcesses {
                  } 
             } 
       } 
-      else if(doAddBook=='B') 
+      else if(doAddBook=='Y') 
                   print("\nBooks added to borrow list.\n"); 
       else 
                   print("Invalid choice. Please try again."); 
